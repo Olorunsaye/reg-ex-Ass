@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ============ANSWER 1================
+
+      // Define test strings
+      const testStrings = [
+        "Acquiring a GLK would be such a soothing feeling.",
+        "Someday, I'll travel the world with my wife and kid.",
+        "My wedding anniversary comes up in a few days.",
+        "A girl child is what  I dream of having as a first child.",
+        "This serves as a test to verify the absence of whitespace.",
+        "The lion is the king of the jungle.",
+        "Here's a word lacking the letter 'E' as an example.",
+      ];
+
+      const regexpGolf = (testStrings, regexes) => {
+        console.log(regexes[0]);
+
+        // Test each regular expression against test strings
+        for (let i = 0; i < regexes.length; i++) {
+          const regex = regexes[i];
+          console.log(`Testing regex ${i + 1}: ${regex}`);
+
+          //   perform operation on each test string to find their match
+          for (const testString of testStrings) {
+            const match = regex.test(testString);
+            console.log(`  "${testString}" => ${match}`);
+          }
+        }
+      };
+
+      // Define regular expressions for each case
+
+      const regexes = [
+        /ca[rt]/,
+        /pr?op/,
+        /ferr(et|y|ari)/,
+        /\b\w+ious\b/,
+        /\s[.,;:]/,
+        /\b\w{7,}\b/,
+        /\b[^eE\s]+\b/,
+      ];
+
+      regexpGolf(testStrings, regexes);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ============ANSWER 3================
+
+      const validNumber = (input) => {
+        const regexPattern = /^[-+]?(\d+\.\d*|\.\d+|\d+)([eE][-+]?\d+)?$/;
+
+        let message = "";
+        // To Use the test method to check if the input matches
+        const outPut = regexPattern.test(input);
+        if (outPut) {
+          // concantenation method with string
+
+          message = `${input} Is a Valid input`;
+        } else {
+          message = `${input} Is an invalid input`;
+        }
+        return message;
+      };
+
+      //The Test cases
+      console.log(validNumber("-4"));
+      console.log(validNumber("+3.14"));
+      console.log(validNumber("0.5"));
+      console.log(validNumber("5."));
+      console.log(validNumber("1e-3"));
+      console.log(validNumber("1E10"));
+      console.log(validNumber(".5"));
+      console.log(validNumber("."));
+      console.log(validNumber("abc"));
+    </script>
+  </body>
+</html>
